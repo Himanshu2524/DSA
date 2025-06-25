@@ -1,0 +1,27 @@
+##### brute force
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+       vector<int> arr;
+        vector<int> arr2;
+        vector<int> result;
+       
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>0){
+                arr.push_back(nums[i]);
+
+            } 
+            else{
+                arr2.push_back(nums[i]);
+            }
+        }
+        for(int i=0;i<nums.size()/2;i++){
+            
+                nums[2*i]=arr[i];
+                nums[2*i+1]=arr2[i];
+        }
+        return nums;
+        
+    }
+};
