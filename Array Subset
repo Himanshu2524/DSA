@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    // Function to check if b is a subset of a
+    bool isSubset(vector<int> &a, vector<int> &b) {
+      map<int,int> mpps;
+      for(int i=0;i<a.size();i++){
+          mpps[a[i]]++;
+      }
+      for(int i=0;i<b.size();i++){
+          if(mpps[b[i]]==0) return false;
+            mpps[b[i]]--; 
+      }
+      return true;
+        
+    }
+};
