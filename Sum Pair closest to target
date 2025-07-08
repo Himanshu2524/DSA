@@ -1,0 +1,26 @@
+class Solution {
+  public:
+    vector<int> sumClosest(vector<int>& arr, int target) {
+        sort(arr.begin(), arr.end());
+        int l = 0, r = arr.size() - 1;
+        int diff = INT_MAX;
+        vector<int> result;
+        
+        while (l < r) {
+            int sum = arr[l] + arr[r];
+            if (abs(target - sum) < diff) {
+                diff = abs(target - sum);
+               result={arr[l],arr[r]};
+            }
+
+            if (sum < target)
+                l++;
+            else
+                r--;
+        }
+        return result;
+    }
+};
+
+
+//in this we have to use two pointer after sorting it and we have to put in array from starting for absolute case
