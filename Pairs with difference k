@@ -1,0 +1,23 @@
+// User function template for C++
+class Solution {
+  public:
+    /* Returns count of pairs with difference k  */
+    int countPairs(vector<int>& arr, int k) {
+      map<int,int> mpps;
+      int count=0;
+      for(int i=0;i<arr.size();i++){
+          mpps[arr[i]]++;
+          
+      }
+      for(int i=0;i<arr.size();i++){
+             int a=arr[i]+k;
+             if(mpps.find(a)!=mpps.end()){
+                 count+=mpps[a];
+             }
+      }
+      return count;
+        
+    }
+};
+
+// in this prgram we have to use map and we only take addition value beacus it will cover negative value too we will take arr[i]+k and ignore arr[i]-k
